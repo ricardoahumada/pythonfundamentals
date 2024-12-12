@@ -49,7 +49,6 @@ CREATE TABLE payments (
 
 /* PRODUCTS */
 
-
 CREATE TABLE products (
   productCode varchar(15) NOT NULL,
   productName varchar(70) NOT NULL,
@@ -61,3 +60,23 @@ CREATE TABLE products (
 );
 
 
+/* SALES */
+
+CREATE TABLE sales (
+  orderNumber SERIAL,
+  orderLineNumber int NOT NULL,
+  orderDate date NOT NULL,
+  shippedDate date DEFAULT NULL,
+  requiredDate date NOT NULL,
+  customerNumber int NOT NULL,
+  employeeNumber int NOT NULL,
+  productCode varchar(15) NOT NULL,
+  status varchar(15) NOT NULL,
+  comments text,
+  quantityOrdered int NOT NULL,
+  priceEach decimal(10,2) NOT NULL,
+  sales_amount decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (orderNumber,orderLineNumber),
+  constraint fk_sales_customer foreign key (customerNumber) REFERENCES customers (customerNumber),
+  constraint fk_sales_product foreign key (productCode) REFERENCES products (productCode)
+);
