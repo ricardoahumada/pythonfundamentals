@@ -1,10 +1,14 @@
 # %%
+import sys
+sys.path.append('..')
+from env import PGHOST, PGDATABASE, PGUSER, PGPASSWORD
+
 import my_sql_module as msm
 
-PGHOST = '...'
-PGDATABASE = '...'
-PGUSER = '...'
-PGPASSWORD = '..'
+# PGHOST = '...'
+# PGDATABASE = '...'
+# PGUSER = '...'
+# PGPASSWORD = '..'
 
 # %%
 # Una conexión para todo el programa

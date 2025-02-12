@@ -1,12 +1,12 @@
 import psycopg2
-
+from env import PGHOST, PGDATABASE, PGUSER, PGPASSWORD
 
 def create_server_connection():
 
-    PGHOST = '...'
-    PGDATABASE = '...'
-    PGUSER = '...'
-    PGPASSWORD = '..'
+    # PGHOST = '...'
+    # PGDATABASE = '...'
+    # PGUSER = '...'
+    # PGPASSWORD = '..'
 
     conn = None
     try:
